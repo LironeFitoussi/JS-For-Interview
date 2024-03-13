@@ -20,8 +20,14 @@ const curry = function (fn) {
   console.log("arity", arity);
   return function f1(...args) {
     if (args.length >= arity) {
-      console.log("enough arguments");
+      // console.log("enough arguments");
       return fn(...args);
+    } else {
+      // console.log("need more arguments");
+      return function f2(...args2) {
+        var newArgs = args.concat(args2);
+        return f1(...newArgs);
+      };
     }
   };
 };
