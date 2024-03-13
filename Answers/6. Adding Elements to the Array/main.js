@@ -3,7 +3,7 @@ const numbers = [1, 2];
 const append = (arr, el) => {
   return [...arr, el];
   //   arr.push(el);
-  return arr;
+  //   return arr;
 };
 
 const newNumbers = append(numbers, 3);
